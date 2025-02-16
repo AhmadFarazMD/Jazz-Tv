@@ -1,115 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jazz TV</title>
-  <link href="https://vjs.zencdn.net/7.15.4/video-js.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
-  <link rel="stylesheet" href="style.css">
-  <style>
-    .jazz-tv-header {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      background: linear-gradient(90deg, rgba(0,0,0,0.9) 0%, rgba(40,40,40,0.9) 100%);
-      padding: 15px 0;
-      text-align: center;
-      z-index: 1000;
-      box-shadow: 0 2px 15px rgba(0,0,0,0.3);
-    }
-    .jazz-tv-logo {
-      font-size: 32px;
-      font-weight: bold;
-      color: #fff;
-      text-transform: uppercase;
-      letter-spacing: 3px;
-      margin: 0;
-      background: linear-gradient(45deg, #ff4d4d, #7e57c2);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
-      font-family: Arial, sans-serif;
-    }
-    .jazz-tv-logo span {
-      color: #ff4d4d;
-      -webkit-text-fill-color: #ff4d4d;
-    }
-    .developer-signature {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      color: #fff;
-      font-size: 14px;
-      z-index: 1000;
-      text-align: right;
-      text-shadow: 0 0 10px rgba(0,0,0,0.5);
-      opacity: 0.8;
-      transition: all 0.3s ease;
-    }
-    .developer-signature:hover {
-      opacity: 1;
-      transform: scale(1.05);
-    }
-    .developer-name {
-      font-weight: bold;
-      color: #e41251;
-      animation: glow 2s ease-in-out infinite;
-    }
-    @keyframes glow {
-      0%, 100% { text-shadow: 0 0 5px #ac0d27, 0 0 10px #d8082b; }
-      50% { text-shadow: 0 0 20px #8aac12, 0 0 30px #b5c524; }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AHMAD_MD - PAK TV</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
 </head>
 <body>
-  <!-- Jazz TV Header -->
-  <header class="jazz-tv-header animate__animated animate__fadeInDown">
-    <h1 class="jazz-tv-logo">JAZZ <span>TV</span></h1>
-  </header>
+    <div class="container">
+        <header class="header">
+            <h1 class="channel-name">PAKISTAN TV</h1>
+            <div class="live-badge">LIVE</div>
+        </header>
 
-  <div class="tv-container">
-    <!-- Animated Background -->
-    <div class="background-animation"></div>
+        <div class="video-container">
+            <div class="loader"></div>
+            <video id="video-player" controls playsinline crossorigin="anonymous"></video>
+            <div class="error-message" id="error-msg">Error loading stream. Please try again later.</div>
+        </div>
 
-    <!-- Overlay Text -->
-    <div class="tv-overlay animate__animated animate__fadeIn">
-      <h1 class="animate__animated animate__slideInDown">Welcome to My TV</h1>
-      <p class="animate__animated animate__slideInUp animate__delay-1s">Enjoy a seamless and immersive viewing experience!</p>
+        <div class="credit">
+            <p>📡 Stream Provided by <strong>AHMAD_MD</strong> | 🌐 Stream is Free On jazz Network so Enjoy without Any Issue 😊.</p>
+        </div>
     </div>
 
-    <!-- Video Player -->
-    <div class="video-wrapper animate__animated animate__fadeIn animate__delay-1s">
-      <video
-        id="my-video"
-        class="video-js vjs-big-play-centered"
-        controls
-        preload="auto"
-        width="100%"
-        height="100%"
-        data-setup="{}"
-      >
-        <source src="https://cdn11lhr.tamashaweb.com:8087/YlUHeDQb7a/champions-abr/live/champions-abr_240p/chunks.m3u8" type="application/x-mpegURL">
-        <p class="vjs-no-js">
-          To view this video, please enable JavaScript or consider upgrading to a web browser that supports HTML5 video.
-        </p>
-      </video>
-    </div>
-
-    <!-- Loading Animation -->
-    <div class="loading-animation">
-      <div class="spinner animate__animated animate__rotateIn"></div>
-      <p class="animate__animated animate__fadeIn animate__delay-1s">Loading...</p>
-    </div>
-
-    <!-- Developer Signature -->
-    <div class="developer-signature animate__animated animate__fadeIn animate__delay-2s">
-      <p>Developed ❤️ by <span class="developer-name">Ahmad_MD</span></p>
-    </div>
-  </div>
-
-  <script src="https://vjs.zencdn.net/7.15.4/video.min.js"></script>
-  <script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
